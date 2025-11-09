@@ -34,14 +34,21 @@ export async function GET() {
     })
     
     // Create sample categories
-    const category1 = await payload.create({
+    await payload.create({
       collection: 'categories',
       data: {
         title: 'Technology',
         slug: 'technology',
         content: {
           root: {
-            children: [{ children: [{ text: 'Technology related posts' }], type: 'paragraph' }],
+            children: [{ 
+              children: [{ text: 'Technology related posts' }], 
+              type: 'paragraph',
+              version: 1,
+              format: '',
+              indent: 0,
+              direction: 'ltr'
+            }],
             direction: 'ltr',
             format: '',
             indent: 0,
@@ -53,14 +60,21 @@ export async function GET() {
       },
     })
     
-    const category2 = await payload.create({
+    await payload.create({
       collection: 'categories',
       data: {
         title: 'Crypto',
         slug: 'crypto',
         content: {
           root: {
-            children: [{ children: [{ text: 'Cryptocurrency and blockchain posts' }], type: 'paragraph' }],
+            children: [{ 
+              children: [{ text: 'Cryptocurrency and blockchain posts' }], 
+              type: 'paragraph',
+              version: 1,
+              format: '',
+              indent: 0,
+              direction: 'ltr'
+            }],
             direction: 'ltr',
             format: '',
             indent: 0,
