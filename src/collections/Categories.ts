@@ -16,15 +16,6 @@ export const Categories: CollectionConfig = {
       type: 'text',
       required: true,
       unique: true,
-      admin: {
-        position: 'sidebar',
-      },
-    },
-    {
-      name: 'posts',
-      type: 'join',
-      collection: 'posts',
-      on: 'categories',
     },
     {
       name: 'content',
@@ -35,7 +26,6 @@ export const Categories: CollectionConfig = {
       type: 'relationship',
       relationTo: 'users',
       required: true,
-      hasMany: false,
     },
   ],
 }

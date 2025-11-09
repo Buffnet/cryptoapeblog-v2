@@ -2,39 +2,45 @@
   "name": "cryptoape",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "payload generate:types && next build",
-    "start": "next start",
+    "dev": "cross-env NODE_OPTIONS=--no-deprecation next dev",
+    "build": "cross-env NODE_OPTIONS=--no-deprecation next build",
+    "start": "cross-env NODE_OPTIONS=--no-deprecation next start",
     "lint": "next lint",
-    "generate:types": "payload generate:types",
-    "seed": "tsx src/seed/createTestUser.ts"
+    "payload": "cross-env NODE_OPTIONS=--no-deprecation payload",
+    "generate:types": "cross-env NODE_OPTIONS=--no-deprecation payload generate:types",
+    "generate:importmap": "cross-env NODE_OPTIONS=--no-deprecation payload generate:importmap",
+    "seed": "tsx src/seed/init-users.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com-buffnet:Buffnet/CryptoApeBlog.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@payloadcms/db-mongodb": "^3.63.0",
     "@payloadcms/next": "^3.63.0",
     "@payloadcms/richtext-lexical": "^3.63.0",
-    "@payloadcms/ui": "^3.63.0",
-    "@types/node": "^24.10.0",
-    "@types/react": "^19.2.2",
-    "next": "^15.5.6",
+    "cross-env": "^10.1.0",
+    "next": "^15.6.0-canary.57",
     "payload": "^3.63.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "typescript": "^5.9.3"
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.19",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
     "autoprefixer": "^10.4.21",
     "eslint": "^9.39.1",
     "eslint-config-next": "^16.0.1",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.18",
-    "tsx": "^4.20.6"
+    "tsx": "^4.20.6",
+
+    "typescript": "^5.9.3"
   }
 }

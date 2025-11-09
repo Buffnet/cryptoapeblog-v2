@@ -16,28 +16,22 @@ export const Posts: CollectionConfig = {
       type: 'text',
       required: true,
       unique: true,
-      admin: {
-        position: 'sidebar',
-      },
     },
     {
       name: 'categories',
       type: 'relationship',
       relationTo: 'categories',
       hasMany: true,
-      required: true,
     },
     {
       name: 'content',
       type: 'richText',
-      required: true,
     },
     {
       name: 'owner',
       type: 'relationship',
       relationTo: 'users',
       required: true,
-      hasMany: false,
     },
   ],
 }

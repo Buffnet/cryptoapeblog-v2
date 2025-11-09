@@ -8,7 +8,7 @@ export const Users: CollectionConfig = {
   },
   fields: [
     {
-      name: 'name',
+      name: 'displayName',
       type: 'text',
       required: true,
     },

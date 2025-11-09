@@ -3,7 +3,7 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'CryptoApe Blog',
-  description: 'Blog platform built with Payload CMS',
+  description: 'Blog powered by Payload CMS',
 }
 
 export default function RootLayout({
