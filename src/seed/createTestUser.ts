@@ -39,7 +39,14 @@ async function createTestUser() {
         slug: 'technology',
         content: {
           root: {
-            children: [{ children: [{ text: 'Technology related posts' }], type: 'paragraph' }],
+            children: [{ 
+              children: [{ text: 'Technology related posts' }], 
+              type: 'paragraph',
+              version: 1,
+              format: '',
+              indent: 0,
+              direction: 'ltr'
+            }],
             direction: 'ltr',
             format: '',
             indent: 0,
@@ -58,7 +65,14 @@ async function createTestUser() {
         slug: 'crypto',
         content: {
           root: {
-            children: [{ children: [{ text: 'Cryptocurrency and blockchain posts' }], type: 'paragraph' }],
+            children: [{ 
+              children: [{ text: 'Cryptocurrency and blockchain posts' }], 
+              type: 'paragraph',
+              version: 1,
+              format: '',
+              indent: 0,
+              direction: 'ltr'
+            }],
             direction: 'ltr',
             format: '',
             indent: 0,

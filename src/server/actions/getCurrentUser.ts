@@ -5,16 +5,17 @@ import { getPayload } from 'payload'
 import config from '@/payload.config'
 
 export async function getCurrentUser() {
-  const token = cookies().get('payload-token')
+  const cookieStore = await cookies()
+  const token = cookieStore.get('payload-token')
   if (!token) return null
   
   const payload = await getPayload({ config })
   
   try {
+    const headers = new Headers()
+    headers.set('cookie', `payload-token=${token.value}`)
     const { user } = await payload.auth({
-      headers: {
-        cookie: `payload-token=${token.value}`,
-      },
+      headers,
     })
     
     return user

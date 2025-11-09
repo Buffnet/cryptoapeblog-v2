@@ -10,17 +10,18 @@ export async function createPost(data: {
   content: any
   categories: string[]
 }) {
-  const token = cookies().get('payload-token')
+  const cookieStore = await cookies()
+  const token = cookieStore.get('payload-token')
   if (!token) return { success: false, error: 'Not authenticated' }
   
   const payload = await getPayload({ config })
   
   try {
     // Get current user from token
+    const headers = new Headers()
+    headers.set('cookie', `payload-token=${token.value}`)
     const { user } = await payload.auth({
-      headers: {
-        cookie: `payload-token=${token.value}`,
-      },
+      headers,
     })
     
     if (!user) {

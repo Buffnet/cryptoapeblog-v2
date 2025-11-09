@@ -17,7 +17,8 @@ export async function authorizeUser(email: string, password: string) {
     })
     
     if (result.token) {
-      cookies().set('payload-token', result.token, {
+      const cookieStore = await cookies()
+      cookieStore.set('payload-token', result.token, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
