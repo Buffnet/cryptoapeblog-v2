@@ -1,15 +1,24 @@
 /* THIS FILE WAS GENERATED AUTOMATICALLY BY PAYLOAD. */
-/* eslint-disable */
-// @ts-nocheck
+/* DO NOT MODIFY IT BECAUSE IT COULD BE REWRITTEN AT ANY TIME. */
 import type { Metadata } from 'next'
+
 import config from '@payload-config'
-import { NotFoundPage } from '@payloadcms/next/views'
+import { NotFoundPage, generatePageMetadata } from '@payloadcms/next/views'
 import { importMap } from '../importMap'
 
-export const metadata: Metadata = {
-  title: 'Not Found',
+type Args = {
+  params: Promise<{
+    segments: string[]
+  }>
+  searchParams: Promise<{
+    [key: string]: string | string[]
+  }>
 }
 
-const NotFound = () => NotFoundPage({ config, importMap })
+export const generateMetadata = ({ params, searchParams }: Args): Promise<Metadata> =>
+  generatePageMetadata({ config, params, searchParams })
+
+const NotFound = ({ params, searchParams }: Args) =>
+  NotFoundPage({ config, params, searchParams, importMap })
 
 export default NotFound

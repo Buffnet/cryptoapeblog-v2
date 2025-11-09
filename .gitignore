@@ -1,7 +1,13 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
+.yarn/install-state.gz
+
+/.idea/*
+!/.idea/runConfigurations
 
 # testing
 /coverage
@@ -12,7 +18,6 @@
 
 # production
 /build
-/dist
 
 # misc
 .DS_Store
@@ -24,8 +29,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env.local
-.env
+.env*.local
 
 # vercel
 .vercel
@@ -34,7 +38,13 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# payload
+.env
+
 /media
-/storage
-src/payload-types.ts
+
+# Playwright
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
