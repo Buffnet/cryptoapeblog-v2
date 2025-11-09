@@ -63,9 +63,11 @@ export default function PostForm() {
             children: [
               {
                 type: 'paragraph',
+                version: 1,
                 children: [
                   {
                     type: 'text',
+                    version: 1,
                     text: content,
                     format: 0,
                   },

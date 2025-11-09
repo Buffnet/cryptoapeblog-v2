@@ -61,9 +61,11 @@ async function seedDatabase() {
                 children: [
                   {
                     type: 'paragraph',
+                    version: 1,
                     children: [
                       {
                         type: 'text',
+                        version: 1,
                         text: `Content for ${categoryData.title} category`,
                         format: 0,
                       },
